@@ -1,0 +1,47 @@
+# --- Node ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.pnpm-store/
+
+# --- Next.js ---
+.next/
+out/
+.vercel/
+dist/
+
+# --- System files ---
+.DS_Store
+Thumbs.db
+
+# --- Environment / Secrets ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Logs ---
+logs
+*.log
+*.log.*
+log/
+
+# --- Build cache / artifacts ---
+.cache/
+coverage/
+*.tsbuildinfo
+
+# --- Misc ---
+*.local
+*.tmp
+*.bak
