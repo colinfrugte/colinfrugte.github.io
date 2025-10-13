@@ -45,7 +45,7 @@ export default function Projects() {
   );
 }
 
-export function Card({
+function Card({
   children,
   className = "",
 }: {
