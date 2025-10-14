@@ -11,6 +11,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "Colin Frugte", // oder dein Projekttitel
+  description: "Portfolio von Colin Frugte",
+  icons: {
+    icon: "/frog_icon_tab.png",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
