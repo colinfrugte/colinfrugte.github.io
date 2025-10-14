@@ -1,12 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
-import {
-  AcademicCapIcon,
-  BriefcaseIcon,
-  SparklesIcon,
-} from "@heroicons/react/24/outline";
 import PageTitle from "@/components/PageTitle";
 import Container from "@/components/Container";
 import BoxItemHeaderTitle from "@/components/BoxItemHeaderTitle";
@@ -38,10 +32,8 @@ export default function AboutContent() {
           <div className="h-full flex-1"></div>
           <div className="flex-3">
             <div className="pb-3">
-              <BoxItemHeaderTitle Icon={AcademicCapIcon}>
-                Education
-              </BoxItemHeaderTitle>
-              <ul>
+              <BoxItemHeaderTitle>🎓 Education</BoxItemHeaderTitle>
+              <ul className="pl-7">
                 {education.map(({ id, university, degree, time }) => (
                   <li
                     key={id}
@@ -101,10 +93,8 @@ export default function AboutContent() {
 
           <div className="flex-3">
             <div className="">
-              <BoxItemHeaderTitle Icon={BriefcaseIcon}>
-                Experience
-              </BoxItemHeaderTitle>
-              <ul className="">
+              <BoxItemHeaderTitle>🧠 Experience</BoxItemHeaderTitle>
+              <ul className="pl-7">
                 {experiences.map((exp) => (
                   <li
                     key={exp.id}
@@ -155,7 +145,7 @@ export default function AboutContent() {
             className={`
     lg:flex-auto sm:flex-none rounded-lg cursor-pointer
     transition-all lg:duration-500 ease-in-out items-center
-    lg:whitespace-nowrap bg-white dark:bg-gray-700 lg:p-3 p-2 shadow
+    lg:whitespace-nowrap bg-white dark:bg-gray-700 lg:p-3 p-2 shadow-xl  border border-foreground/10
     ${
       active === key
         ? "lg:w-lg lg:h-auto w-auto h-auto text-black dark:text-white"
@@ -186,11 +176,9 @@ function SkillsAndInterests() {
     <div className="flex">
       <div className="flex-1"></div>
       <div className="flex-1">
-        <BoxItemHeaderTitle Icon={SparklesIcon}>
-          Skills & Interest
-        </BoxItemHeaderTitle>
+        <BoxItemHeaderTitle>🏄🏻‍♂️ Skills & Interest</BoxItemHeaderTitle>
         <section>
-          <ul className="gap-1 ">
+          <ul className="gap-1 pl-7">
             {skills.map((skill) => (
               <li key={skill} className="py-2">
                 {skill}

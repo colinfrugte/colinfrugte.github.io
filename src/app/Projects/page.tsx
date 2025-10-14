@@ -14,7 +14,7 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className=" transition-transform hover:scale-[1.02] rounded-xl bg-gray-200 dark:bg-gray-700 dark:text-white"
+              className=" transition-transform hover:scale-[1.02] rounded-xl bg-white shadow-xl dark:bg-gray-700 dark:text-white"
             >
               <div key={project.id} className="flex flex-col gap-2">
                 <Image
@@ -24,8 +24,8 @@ export default function Projects() {
                   width={384}
                   height={192}
                 />
-                <div className="px-8">
-                  <div className="text-xl font-bold">
+                <div className="px-8 space-y-1">
+                  <div className="text-lg font-bold">
                     {project.project_name || "Unnamed Project"}
                   </div>
                   <p className="text-sm">{project.short_description}</p>
@@ -62,8 +62,8 @@ const projectContent = [
 
 const MoreToComeCard = () => {
   return (
-    <div className="rounded-xl bg-gray-50 dark:bg-gray-700 dark:text-white flex items-center justify-center">
-      <p className="text-lg font-semibold">More to come...</p>
+    <div className="rounded-xl bg-white shadow-xl dark:bg-gray-700 dark:text-white flex items-center justify-center">
+      <p className="text-lg font-semibold">More to come...🚧</p>
     </div>
   );
 };

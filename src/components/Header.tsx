@@ -40,13 +40,13 @@ export default function Header({
                 onClick={() => onNavigate("about")}
                 className={`${linkBase} ${underline}`}
               >
-                About
+                Über mich
               </button>
               <button
                 onClick={() => onNavigate("contact")}
                 className={`${linkBase} ${underline}`}
               >
-                Contact
+                Kontakt
               </button>
             </div>
           </nav>

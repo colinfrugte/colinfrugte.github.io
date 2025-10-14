@@ -11,7 +11,7 @@ export default function Introduction() {
               src="/profilepicture.jpeg"
               alt="Profilbild"
               fill
-              className="object-cover rounded-full border-8 border-white hover:border-black transition-colors duration-300 ease-in-out"
+              className="object-cover rounded-full border-8 transition-transform hover:scale-[1.02]"
             />
           </div>
           <div className="flex flex-col">
