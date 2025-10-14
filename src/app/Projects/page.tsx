@@ -43,9 +43,9 @@ export default function Projects() {
 const projectContent = [
   {
     id: 1,
-    project_name: "Economic Narrative Graph Visualization",
+    project_name: "Visualisierung wirtschaftlicher Narrative",
     short_description:
-      "Interactive graph visualization of narrative nodes and edges.",
+      "Interaktive Graph-Visualisierung von Narrativ-Knoten und -Kanten.",
     picture: "/graph2.png",
     link: "https://www.uni-hamburg.de",
   },
