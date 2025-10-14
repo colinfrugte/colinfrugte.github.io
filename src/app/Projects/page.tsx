@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import Image from "next/image";
 import PageTitle from "@/components/PageTitle";
 import Container from "@/components/Container";
@@ -8,75 +7,63 @@ export default function Projects() {
     <Container className="">
       <PageTitle>Projekte</PageTitle>
       <section id="projects">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 h-screen lg:gap-14">
           {projectContent.map((project) => (
-            <Card
+            <a
               key={project.id}
-              className="bg-gray-200 dark:bg-gray-700 dark:text-white"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" transition-transform hover:scale-[1.02] rounded-xl bg-gray-200 dark:bg-gray-700 dark:text-white"
             >
-              <div>
+              <div key={project.id} className="flex flex-col gap-2">
                 <Image
-                  className="h-36 w-48 object-cover"
+                  className="object-cover aspect-video rounded-t-xl"
                   src={project.picture || "/placeholder.png"}
                   alt={project.project_name || "Project Image"}
                   width={384}
                   height={192}
                 />
+                <div className="px-8">
+                  <div className="text-xl font-bold">
+                    {project.project_name || "Unnamed Project"}
+                  </div>
+                  <p className="text-sm">{project.short_description}</p>
+                </div>
               </div>
-              <div className="text-xl font-bold">
-                {project.project_name || "Unnamed Project"}
-              </div>
-              <p className="text-sm">{project.short_description}</p>
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 underline"
-                >
-                  Visit Project
-                </a>
-              )}
-            </Card>
+            </a>
           ))}
+          <MoreToComeCard />
         </div>
       </section>
     </Container>
   );
 }
 
-function Card({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`cursor-pointer rounded-xl p-8 ${className}  transition-transform duration-300 ease-out
-     hover:-translate-y-1`}
-    >
-      <section className="">{children}</section>
-    </div>
-  );
-}
-
 const projectContent = [
   {
     id: 1,
-    project_name: "flutterproject",
-    short_description:
-      "did a flutterproject for a project seminar in university",
-    picture: "/iPhone_13_Blue.webp",
-    // link: "https://www.uni-hamburg.de",
-  },
-  {
-    id: 2,
     project_name: "Economic Narrative Graph Visualization",
     short_description:
       "Interactive graph visualization of narrative nodes and edges.",
-    picture: "",
+    picture: "/graph2.png",
     link: "https://www.uni-hamburg.de",
   },
+  {
+    id: 2,
+    project_name: "amplify",
+    short_description:
+      "Eine App, die Mitarbeitenden hilft, sich jeden Tag kurz zu reflektieren – für mehr mentale Stärke und Bewusstsein im Arbeitsalltag.",
+    picture: "/amplify2.png",
+
+    link: "https://www.youtube.com/watch?v=RtpYYggnDDs&t=2s",
+  },
 ];
+
+const MoreToComeCard = () => {
+  return (
+    <div className="rounded-xl bg-gray-50 dark:bg-gray-700 dark:text-white flex items-center justify-center">
+      <p className="text-lg font-semibold">More to come...</p>
+    </div>
+  );
+};

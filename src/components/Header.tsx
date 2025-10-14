@@ -5,12 +5,14 @@ import { useState } from "react";
 export default function Header({
   onNavigate,
 }: {
-  onNavigate: (section: "introduction" | "projects" | "about") => void;
+  onNavigate: (
+    section: "introduction" | "projects" | "about" | "contact"
+  ) => void;
 }) {
   const [open, setOpen] = useState(false);
 
   const linkBase =
-    "relative px-3 py-1 text-sm font-medium text-gray-800 hover:text-gray-900 transition-colors text-lg";
+    "relative py-1 text-sm text-gray-800 hover:text-gray-900 transition-colors text-lg";
 
   const underline =
     "after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-full after:origin-left \
@@ -18,16 +20,16 @@ export default function Header({
 
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-foreground/20">
-      <div className="mx-auto max-w-6xl px-8">
+      <div className="mx-auto px-12">
         <div>
-          <nav className="h-14 flex items-center justify-between">
+          <nav className="h-14 flex items-center justify-between font-extrabold">
             <button
               onClick={() => onNavigate("introduction")}
               className={`${linkBase} ${underline}`}
             >
               Colin Frugte
             </button>
-            <div className="">
+            <div className="space-x-6">
               <button
                 onClick={() => onNavigate("projects")}
                 className={`${linkBase} ${underline}`}
@@ -39,6 +41,12 @@ export default function Header({
                 className={`${linkBase} ${underline}`}
               >
                 About
+              </button>
+              <button
+                onClick={() => onNavigate("contact")}
+                className={`${linkBase} ${underline}`}
+              >
+                Contact
               </button>
             </div>
           </nav>
@@ -73,7 +81,6 @@ export default function Header({
             </svg>
           </button>
         </div>
-
         <div id="mobile-nav" className={open ? "md:hidden pb-3" : "hidden"}>
           <nav className="flex flex-col gap-3 text-sm">
             <a

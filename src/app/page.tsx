@@ -5,12 +5,14 @@ import Projects from "./Projects/page";
 import Introduction from "./Introduction/page";
 import About from "./About/AboutContent";
 import { useRef } from "react";
+import Contact from "./Contact/page";
 
 export default function Home() {
   const sectionRefs = {
     introduction: useRef<HTMLDivElement>(null),
     projects: useRef<HTMLDivElement>(null),
     about: useRef<HTMLDivElement>(null),
+    contact: useRef<HTMLDivElement>(null),
   };
 
   // Dynamische Scrollfunktion
@@ -30,6 +32,9 @@ export default function Home() {
         </div>
         <div ref={sectionRefs.about}>
           <About />
+        </div>
+        <div ref={sectionRefs.contact}>
+          <Contact />
         </div>
       </div>
     </main>

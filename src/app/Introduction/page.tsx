@@ -15,11 +15,10 @@ export default function Introduction() {
             />
           </div>
           <div className="flex flex-col">
-            <p className="mt-4 text-6xl text-black dark:text-white">
-              Building and learning, one step at a time.
-            </p>
-            <p className=" text-2xl text-gray-800 dark:text-white pt-5">
-              Trying to live life in my own pace ❤️
+            <p className="mt-4 text-4xl font-semibold text-black dark:text-white">
+              Hi ich bin
+              <span className="text-amber-700"> Colin 👋</span> und das sind ein
+              paar Projekte, an denen ich gerade arbeite. Schau dich gerne um!
             </p>
           </div>
         </div>
