@@ -47,7 +47,6 @@ const projectContent = [
     short_description:
       "Interaktive Graph-Visualisierung von Narrativ-Knoten und -Kanten.",
     picture: "/graph2.png",
-    link: "https://www.uni-hamburg.de",
   },
   {
     id: 2,

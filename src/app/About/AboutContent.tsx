@@ -93,7 +93,7 @@ export default function AboutContent() {
 
           <div className="flex-3">
             <div className="">
-              <BoxItemHeaderTitle>🧠 Experience</BoxItemHeaderTitle>
+              <BoxItemHeaderTitle>🧠 Erfahrung</BoxItemHeaderTitle>
               <ul className="pl-7">
                 {experiences.map((exp) => (
                   <li
@@ -134,7 +134,7 @@ export default function AboutContent() {
   }
 
   return (
-    <Container className="">
+    <Container>
       <PageTitle>About</PageTitle>
       <section id="about" className="flex flex-col sm:flex-row gap-4 ">
         {items.map(({ key, component }) => (
@@ -176,12 +176,21 @@ function SkillsAndInterests() {
     <div className="flex">
       <div className="flex-1"></div>
       <div className="flex-1">
-        <BoxItemHeaderTitle>🏄🏻‍♂️ Skills & Interest</BoxItemHeaderTitle>
-        <section>
-          <ul className="gap-1 pl-7">
+        <BoxItemHeaderTitle>👨🏻‍🔧 Skills</BoxItemHeaderTitle>
+        <section className="">
+          <ul className="gap-1 pl-7 space-y-1">
             {skills.map((skill) => (
-              <li key={skill} className="py-2">
-                {skill}
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
+        </section>
+        <div className="border-t border-white my-5" /> {/* Divider */}
+        <BoxItemHeaderTitle>🏄🏻‍♂️ Hobbys</BoxItemHeaderTitle>
+        <section>
+          <ul className="gap-1 pl-7 space-y-1">
+            {interests.map((interest) => (
+              <li key={interest} className="">
+                {interest}
               </li>
             ))}
           </ul>
@@ -197,11 +206,11 @@ const skills = [
   "JavaScript / TypeScript",
   "React / Next.js",
   "Tailwind CSS",
-  "Docker & Environments (Conda, venv)",
-  "Sustainability & Economics",
   "Natural Language Processing (NLP)",
-  "Data Analysis & Visualization",
+  "Machine Learning",
 ];
+
+const interests = ["Natur", "Wandern", "Yoga", "Musik"];
 
 // projects.ts
 export const experiences = [
