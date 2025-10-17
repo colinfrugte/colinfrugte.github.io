@@ -1,12 +1,10 @@
-"use client";
-
 import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
 import Container from "@/components/Container";
 import BoxItemHeaderTitle from "@/components/BoxItemHeaderTitle";
 
 export default function AboutContent() {
-  const [active, setActive] = useState<string | null>("one");
+  const [active, setActive] = useState<string | null>("skill");
 
   const items = [
     {
@@ -39,7 +37,7 @@ export default function AboutContent() {
                     key={id}
                     className={`py-2  
                 ${
-                  active === "one"
+                  active === "edu"
                     ? "hover:translate-x-1 transition-transform "
                     : "overflow-hidden whitespace-nowrap"
                 }
@@ -100,7 +98,7 @@ export default function AboutContent() {
                     key={exp.id}
                     className={`py-2  
                 ${
-                  active === "one"
+                  active === "exp"
                     ? "hover:translate-x-1 transition-transform "
                     : ""
                 }
@@ -140,12 +138,13 @@ export default function AboutContent() {
         {items.map(({ key, component }) => (
           <div
             key={key}
+            onClick={() => setActive(key)}
             onMouseEnter={() => setActive(key)} // wenn Maus drüber geht
             onMouseLeave={() => setActive(null)} // wenn Maus weggeht
             className={`
-    lg:flex-auto sm:flex-none rounded-lg cursor-pointer
+    lg:flex-auto sm:flex-none rounded-2xl cursor-pointer
     transition-all lg:duration-500 ease-in-out items-center
-    lg:whitespace-nowrap bg-white dark:bg-gray-700 lg:p-3 p-2 shadow-xl  border border-foreground/10
+    lg:whitespace-nowrap bg-white dark:bg-gray-700 lg:p-3 p-2 shadow-lg hover:shadow-xl  border border-foreground/10
     ${
       active === key
         ? "lg:w-lg lg:h-auto w-auto h-auto text-black dark:text-white"
@@ -232,14 +231,6 @@ export const experiences = [
   },
   {
     id: 3,
-    role: "Fullstack Developer",
-    company: "AClue Consulting",
-    description: "Working student",
-    start: "03/2021",
-    end: "06/2021",
-  },
-  {
-    id: 4,
     role: "SAP Consultant",
     company: "Bandtworks GmbH",
     description: "Consulting and development in retail",
@@ -247,7 +238,7 @@ export const experiences = [
     end: "05/2020",
   },
   {
-    id: 5,
+    id: 4,
     role: "SAP Consultant",
     company: "Acando GmbH (now part of CGI)",
     description: "Consulting and development",

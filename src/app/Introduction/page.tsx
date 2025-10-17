@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function Introduction() {
   return (
     <Container className="relative isolate  bg-white dark:bg-black">
-      <section id="introduction" className="max-w-3xl pt-16 mx-auto">
-        <div className="flex flex-col gap-4 h-64 items-center">
+      <section id="introduction" className="max-w-3xl lg:pt-16 mx-auto">
+        <div className="flex flex-col gap-4 items-center">
           <div className="relative aspect-square w-40 sm:w-64 ">
             <Image
               src="/profilepicture.jpeg"

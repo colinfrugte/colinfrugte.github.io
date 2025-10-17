@@ -9,7 +9,7 @@ export default function Container({
 }) {
   return (
     <div className={`${className}`}>
-      <section className="py-16 px-12 lg:h-screen snap-start relative isolate mt-16 ">
+      <section className="lg:py-16 lg:px-12 px-6 lg:h-screen snap-start relative isolate mt-16 ">
         {children}
       </section>
     </div>

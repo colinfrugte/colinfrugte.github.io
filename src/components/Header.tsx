@@ -1,6 +1,5 @@
-"use client";
-
 import { useState } from "react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Header({
   onNavigate,
@@ -21,8 +20,8 @@ export default function Header({
   return (
     <header className="sticky top-0 z-50 bg-background border-b border-foreground/20">
       <div className="mx-auto px-12">
-        <div>
-          <nav className="h-14 flex items-center justify-between font-extrabold">
+        <div className="">
+          <nav className="hidden h-14 md:flex items-center justify-between font-extrabold">
             <button
               onClick={() => onNavigate("introduction")}
               className={`${linkBase} ${underline}`}
@@ -81,28 +80,45 @@ export default function Header({
             </svg>
           </button>
         </div>
-        <div id="mobile-nav" className={open ? "md:hidden pb-3" : "hidden"}>
-          <nav className="flex flex-col gap-3 text-sm">
-            <a
-              href="#projects"
-              className="py-1 hover:opacity-80 transition-opacity"
+        {open && (
+          <div className="fixed inset-0 z-50 bg-white/50 backdrop-blur px-8 py-10">
+            <nav className="flex flex-col space-y-4 items-start text-2xl">
+              <button
+                className="  rounded-md transition duration-150 ease-out hover:opacity-90 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 motion-safe:transform"
+                onClick={() => {
+                  onNavigate("projects");
+                  setOpen(false);
+                }}
+              >
+                Projekte
+              </button>
+              <button
+                className="  rounded-md transition duration-150 ease-out hover:opacity-90 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 motion-safe:transform"
+                onClick={() => {
+                  onNavigate("about");
+                  setOpen(false);
+                }}
+              >
+                Über mich
+              </button>
+              <button
+                className="  rounded-md transition duration-150 ease-out hover:opacity-90 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 motion-safe:transform"
+                onClick={() => {
+                  onNavigate("contact");
+                  setOpen(false);
+                }}
+              >
+                Kontakt
+              </button>
+            </nav>
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-3 right-3 text-2xl"
             >
-              Projekte
-            </a>
-            <a
-              href="#about"
-              className="py-1 hover:opacity-80 transition-opacity"
-            >
-              Über mich
-            </a>
-            <a
-              href="#contact"
-              className="py-1 hover:opacity-80 transition-opacity"
-            >
-              Kontakt
-            </a>
-          </nav>
-        </div>
+              <XMarkIcon className="h-8 w-8" />
+            </button>
+          </div>
+        )}
       </div>
     </header>
   );

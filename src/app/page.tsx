@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import Projects from "./Projects/page";
 import Introduction from "./Introduction/page";
-import About from "./About/AboutContent";
+import About from "./About/page";
 import { useRef } from "react";
 import Contact from "./Contact/page";
 
@@ -21,22 +21,24 @@ export default function Home() {
   };
 
   return (
-    <main className="h-screen snap-y snap-mandatory overflow-y-scroll">
+    <>
       <Header onNavigate={handleScrollTo} />
-      <div className="divide-y-2 divide-gray-500">
-        <div ref={sectionRefs.introduction}>
-          <Introduction />
+      <main className="lg:h-screen snap-y snap-mandatory overflow-y-scroll">
+        <div className="lg:divide-y-2 lg:divide-gray-500">
+          <div ref={sectionRefs.introduction}>
+            <Introduction />
+          </div>
+          <div ref={sectionRefs.projects}>
+            <Projects />
+          </div>
+          <div ref={sectionRefs.about}>
+            <About />
+          </div>
+          <div ref={sectionRefs.contact}>
+            <Contact />
+          </div>
         </div>
-        <div ref={sectionRefs.projects}>
-          <Projects />
-        </div>
-        <div ref={sectionRefs.about}>
-          <About />
-        </div>
-        <div ref={sectionRefs.contact}>
-          <Contact />
-        </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
