@@ -35,7 +35,7 @@ const projectContent = [
       "Interaktive Graph-Visualisierung von Narrativ-Knoten und -Kanten.",
     picture: "/graph2.png",
     tech: ["python", "fastapi", "vite"],
-    link: "https://colinfrugte.github.io/inflation-narrative/",
+    link: "https://colinfrugte.github.io/infl_narrative/",
   },
   {
     id: 2,
