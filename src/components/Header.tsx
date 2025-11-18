@@ -11,7 +11,7 @@ export default function Header({
   const [open, setOpen] = useState(false);
 
   const linkBase =
-    "relative py-1 text-sm text-gray-800 hover:text-gray-900 transition-colors text-lg";
+    "relative py-1 text-sm text-gray-800 hover:text-gray-900 transition-colors text-lg dark:text-white";
 
   const underline =
     "after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-full after:origin-left \
